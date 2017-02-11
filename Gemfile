@@ -32,6 +32,8 @@ gem 'bootswatch-rails'
 gem 'devise'
 # https://github.com/sferik/rails_admin
 gem 'rails_admin'
+# Use Gmaps4rails to simply create a Google Map with overlays
+gem 'gmaps4rails'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

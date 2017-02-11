@@ -1,14 +1,21 @@
-<div class="col-sm-6" id="posts">
-    <% @posts.each do |post| %>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h5><%= post.title %></h5>
+<div class="row">
+  <!-- display every post -->
+  <div class="col-sm-6" id="posts">
+      <% @posts.each do |post| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h5><%= post.title %></h5>
+          </div>
+          <div class="panel-body">
+            <time><%= post.created_at.strftime('%b %d, %Y') %></time>
+            <p><%= post.body.truncate(50) %></p>
+            <p class="text-right"><%= link_to "READ MORE", post_path(post) %></p>
+          </div>
         </div>
-        <div class="panel-body">
-          <time><%= post.created_at.strftime('%b %d, %Y') %></time>
-          <p><%= post.body.truncate(50) %></p>
-          <p class="text-right"><%= link_to "READ MORE", post_path(post) %></p>
-        </div>
-      </div>
-    <% end %>
+      <% end %>
+  </div>
+
+  <div class="col-sm-6 hidden-xs">
+    <div id="map"></div>
+  </div>
 </div>
