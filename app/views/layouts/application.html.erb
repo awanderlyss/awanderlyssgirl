@@ -12,6 +12,7 @@
   <body>
     <%= render 'shared/navigation' %>
     <div id="main-container" class="container-fluid">
+      <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %>
       <% if current_user %>
         <div id="message" class="alert alert-dismissible alert-warning">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
