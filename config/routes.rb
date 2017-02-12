@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   end
 
   root 'home#index'
-
-  get "/pages/:page" => "pages#show"
+  
+  # pass the page parameter in as an array.
+  get "/pages/*page" => "pages#show"
 
 end
